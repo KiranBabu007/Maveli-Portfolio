@@ -5,6 +5,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
 (function() {
   "use strict";
 
@@ -355,6 +357,8 @@ function animateCircles() {
 
 animateCircles();
 
+var loader=document.getElementById("preloader")
 
-
-
+window.addEventListener("load",()=>{
+  loader.style.display="none"
+})

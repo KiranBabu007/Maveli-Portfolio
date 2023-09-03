@@ -9,6 +9,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -43,7 +44,7 @@ h6 {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 99999999;
+  z-index: 99;
 
 }
 
@@ -1380,4 +1381,22 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+#preloader {
+  background: #FFFFFF url("../img/preload.gif") no-repeat center;
+  background-size: 50%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+
+}
+
+#preloader image {
+  background-image: url("../img/pre.png") no-repeat center;
+  height: 50vh;
+  width: 80vh;
+  margin-left: 60vh;
+  position: fixed;
 }
