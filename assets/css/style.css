@@ -831,7 +831,8 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  height: 30vh;
+  width: 30vh;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.15);
   margin: 0 auto;
@@ -1134,4 +1135,9 @@ section {
   width: 100%;
   position: fixed;
   z-index: 9999;
+}
+
+.container img {
+  height: 200px;
+  width: 300px;
 }
