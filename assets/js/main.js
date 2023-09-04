@@ -1,16 +1,8 @@
-/**
-* Template Name: Laura
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
+
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -19,10 +11,6 @@
       return document.querySelector(el)
     }
   }
-
-  /**
-   * Easy event listener function
-   */
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
     if (selectEl) {
@@ -34,16 +22,11 @@
     }
   }
 
-  /**
-   * Easy on scroll event listener 
-   */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
 
-  /**
-   * Navbar links active state on scroll
-   */
+
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -61,9 +44,7 @@
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
 
-  /**
-   * Scrolls to an element with header offset
-   */
+
   const scrollto = (el) => {
     let header = select('#header')
     let offset = header.offsetHeight
@@ -79,9 +60,7 @@
     })
   }
 
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
+
   let selectHeader = select('#header')
   if (selectHeader) {
     const headerScrolled = () => {
@@ -95,9 +74,7 @@
     onscroll(document, headerScrolled)
   }
 
-  /**
-   * Back to top button
-   */
+
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -111,18 +88,14 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
+
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
 
-  /**
-   * Mobile nav dropdowns activate
-   */
+ 
   on('click', '.navbar .dropdown > a', function(e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
@@ -130,9 +103,6 @@
     }
   }, true)
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
@@ -148,9 +118,7 @@
     }
   }, true)
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
+
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
@@ -159,9 +127,7 @@
     }
   });
 
-  /**
-   * Skills animation
-   */
+ 
   let skilsContent = select('.skills-content');
   if (skilsContent) {
     new Waypoint({
@@ -176,9 +142,7 @@
     })
   }
 
-  /**
-   * Testimonials slider
-   */
+
   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
@@ -194,9 +158,7 @@
     }
   });
 
-  /**
-   * Porfolio isotope and filter
-   */
+
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
@@ -225,9 +187,6 @@
 
   
 
-  /**
-   * Initiate Pure Counter 
-   */
   new PureCounter();
 
 })()
@@ -240,7 +199,7 @@ function handleScroll() {
   const windowHeight = window.innerHeight;
 
   if (!isImageVisible && rect.top <= windowHeight * 0.5) {
-    // When the top of the image is within half of the viewport height, start animation
+ 
     imageElement.style.opacity = 1;
     imageElement.style.transform = 'translateX(0)';
     isImageVisible = true;
@@ -250,10 +209,10 @@ function handleScroll() {
 
 const numberOfCircles = 22;
 
-// Get the container where circles will be added
+
 const circleContainer = document.getElementById("circle-container");
 
-// Create and append circles to the container
+
 for (let i = 0; i < numberOfCircles; i++) {
     const circle = document.createElement("div");
     circle.classList.add("circle");
@@ -261,10 +220,10 @@ for (let i = 0; i < numberOfCircles; i++) {
 }
 
 
-// Attach the scroll event listener
+
 window.addEventListener("scroll", handleScroll);
 
-// Initial check in case the element is already in view when the page loads
+
 handleScroll();
 
 const coords = { x: 0, y: 0 };
@@ -322,8 +281,8 @@ function animateCircles() {
     circle.y = y;
 
     const nextCircle = circles[index + 1] || circles[0];
-    x += (nextCircle.x - x) * 0.3;
-    y += (nextCircle.y - y) * 0.3;
+    x += (nextCircle.x - x) * 0.25;
+    y += (nextCircle.y - y) * 0.25;
   });
  
   requestAnimationFrame(animateCircles);
@@ -331,23 +290,28 @@ function animateCircles() {
 
 animateCircles();
 
-var loader = document.getElementById("preloader")
-window.addEventListener("load",()=>{
-  loader.style.display="none"
-})
 
-// Select the submit button element
+var loader = document.getElementById("preloader");
+
+setTimeout(function() {
+  loader.style.display = "none";
+}, 7000); 
+
+
+
+
+
+
 const submitButton = document.getElementById('submit');
 
 const successMessage = document.querySelector('.sent-message');
 
 
-// Add a click event listener to the submit button
+
 submitButton.addEventListener('click', () => {
 
-  // After 10 seconds (10000 milliseconds), hide the success message
   setTimeout(() => {
-    successMessage.style.display = 'block'; // Hide the success message
+    successMessage.style.display = 'block'; 
   }, 1000);
   setTimeout(() => {
     successMessage.style.display = 'none'; // Hide the success message
