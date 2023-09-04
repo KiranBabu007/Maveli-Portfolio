@@ -1,3 +1,3 @@
 # Maveli-Portfolio
 
-Link:https://kiranbabu007.github.io/Maveli-Portfolio/
+https://kiranbabu007.github.io/Maveli-Portfolio/
