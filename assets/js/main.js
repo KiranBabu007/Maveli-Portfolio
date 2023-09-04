@@ -222,30 +222,6 @@
 
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
 
   
 
@@ -359,6 +335,61 @@ var loader = document.getElementById("preloader")
 window.addEventListener("load",()=>{
   loader.style.display="none"
 })
+
+// Select the submit button element
+const submitButton = document.getElementById('submit');
+
+const successMessage = document.querySelector('.sent-message');
+
+
+// Add a click event listener to the submit button
+submitButton.addEventListener('click', () => {
+
+  // After 10 seconds (10000 milliseconds), hide the success message
+  setTimeout(() => {
+    successMessage.style.display = 'block'; // Hide the success message
+  }, 1000);
+  setTimeout(() => {
+    successMessage.style.display = 'none'; // Hide the success message
+  }, 7000); // 5000 milliseconds (5 seconds)
+});
+
+
+function startCountdown() {
+  const targetDate = new Date("2024-09-14T00:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const timeRemaining = targetDate - now;
+
+    if (timeRemaining <= 0) {
+      // Countdown has expired
+      document.getElementById("countdown").innerHTML = "Countdown Expired";
+    } else {
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `
+        <span class="h1 font-weight-bold">${days}</span> Day${days !== 1 ? 's' : ''} 
+        <span class="h1 font-weight-bold">${hours}</span> Hr
+        <span class="h1 font-weight-bold">${minutes}</span> Min
+        <span class="h1 font-weight-bold">${seconds}</span> Sec`;
+    }
+  }
+
+  // Initial call to update the countdown
+  updateCountdown();
+
+  // Update the countdown every second
+  setInterval(updateCountdown, 1000);
+}
+
+startCountdown();
+
+
+
 
 
 
