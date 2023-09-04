@@ -831,8 +831,8 @@ section {
 }
 
 .bg-gradient-4 {
-  background: #ff416c;
-  background: -webkit-linear-gradient(to right, #ff416c, #ff4b2b);
+
+  /* background: -webkit-linear-gradient(to right, #ff416c, #ff4b2b); */
   background: linear-gradient(to right, #ff416c, #ff4b2b);
 }
 
