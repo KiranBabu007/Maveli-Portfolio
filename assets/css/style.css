@@ -1060,10 +1060,6 @@ section {
   text-decoration: none;
 }
 
-#footer .copyright {
-  margin: 0 0 5px 0;
-}
-
 #footer .credits {
   font-size: 13px;
 }
@@ -1081,7 +1077,7 @@ section {
 }
 
 #preloader p {
-  font-size: 25px;
+  font-size: 21px;
   color: #444444;
   margin-bottom: 150px;
   font-family: Verdana, Geneva, Tahoma, sans-serif
