@@ -1075,6 +1075,16 @@ section {
   width: 100%;
   position: fixed;
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader p {
+  font-size: 25px;
+  color: #444444;
+  margin-bottom: 150px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .container img {

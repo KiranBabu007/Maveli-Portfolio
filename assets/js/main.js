@@ -295,7 +295,7 @@ var loader = document.getElementById("preloader");
 
 setTimeout(function() {
   loader.style.display = "none";
-}, 7000); 
+}, 5000); 
 
 
 
@@ -314,8 +314,8 @@ submitButton.addEventListener('click', () => {
     successMessage.style.display = 'block'; 
   }, 1000);
   setTimeout(() => {
-    successMessage.style.display = 'none'; // Hide the success message
-  }, 7000); // 5000 milliseconds (5 seconds)
+    successMessage.style.display = 'none'; 
+  }, 7000); 
 });
 
 
@@ -327,7 +327,7 @@ function startCountdown() {
     const timeRemaining = targetDate - now;
 
     if (timeRemaining <= 0) {
-      // Countdown has expired
+      
       document.getElementById("countdown").innerHTML = "Countdown Expired";
     } else {
       const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -343,10 +343,10 @@ function startCountdown() {
     }
   }
 
-  // Initial call to update the countdown
+
   updateCountdown();
 
-  // Update the countdown every second
+
   setInterval(updateCountdown, 1000);
 }
 
