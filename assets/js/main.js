@@ -290,12 +290,13 @@ function animateCircles() {
 
 animateCircles();
 
+document.addEventListener("DOMContentLoaded",()=>{
+  var loader = document.getElementById("preloader");
 
-var loader = document.getElementById("preloader");
+    loader.style.display = "none";
 
-setTimeout(function() {
-  loader.style.display = "none";
-}, 5000); 
+})
+
 
 
 
